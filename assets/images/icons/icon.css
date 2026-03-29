@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+.icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+}
+
+
+.icon-arrow {
+  mask-image: url(arrow.svg);
+  -webkit-mask-image: url(arrow.svg);
+}
+.icon-close {
+  mask-image: url(close.svg);
+  -webkit-mask-image: url(close.svg);
+}
+
+.icon-bad{
+      mask-image: url(bad.svg);
+  -webkit-mask-image: url(bad.svg);
+}
+
+
+
+.icon-star{
+    mask-image: url(star.svg);
+  -webkit-mask-image: url(star.svg);
+}
+.icon-arrow-down{
+      mask-image: url(arrowDown.svg);
+  -webkit-mask-image: url(arrowDown.svg);
+}
+
+.icon-login{
+      mask-image: url(login.svg);
+  -webkit-mask-image: url(login.svg);
+}
+
+
+.icon-stars{
+      mask-image: url(stars.svg);
+  -webkit-mask-image: url(stars.svg);
+}
+
+.icon-check{
+      mask-image: url(check.svg);
+  -webkit-mask-image: url(check.svg);
+}
+
+.icon-search{
+      mask-image: url(search.svg);
+  -webkit-mask-image: url(search.svg);
+}
+.icon-plus{
+      mask-image: url(plus.svg);
+  -webkit-mask-image: url(plus.svg);
+}
