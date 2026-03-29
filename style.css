@@ -2590,7 +2590,12 @@ header.moved {
   border-radius: 10px;
   background: #1252d3;
 }
+@media (max-width: 1700px) {
 
+    .hero-ellipse {
+    bottom: -60px;
+  }
+}
 @media (max-width: 1600px) {
   .advanced-service-section {
     min-height: 620px;
@@ -2601,11 +2606,10 @@ header.moved {
   .trust-body {
     padding: 120px 0 0;
   }
+
 }
 @media (max-width: 1500px) {
-  .hero-ellipse {
-    bottom: -60px;
-  }
+
   .trust-section {
     min-height: 828px;
   }
