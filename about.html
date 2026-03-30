@@ -1,0 +1,1435 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Slidy-ABout</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header-body G-align-center">
+            <div class="header-tools G-align-center">
+              <a href="index.html" class="header-logo G-flex">
+                <img
+                  loading="eager"
+                  src="assets/images/logo.svg"
+                  data-light="assets/images/logo.svg"
+                  data-dark="assets/images/logo-dark.svg"
+                  alt="logo"
+                  fetchpriority="high"
+                  width="96"
+                  height="29"
+                  style="width: auto; height: auto"
+                />
+              </a>
+              <div class="header-switch G-align-center">
+                <button
+                  class="theme-btn"
+                  data-theme-btn="light"
+                  aria-label="Light theme"
+                >
+                  ☀️
+                </button>
+                <button
+                  class="theme-btn"
+                  data-theme-btn="dark"
+                  aria-label="Dark theme"
+                >
+                  🌙
+                </button>
+              </div>
+            </div>
+
+            <div class="header-actions G-align-center">
+              <div class="language-select-wrapper header-select-wrapper">
+                <div class="language-select-header G-align-center">
+                  <div class="l-select-flag G-flex">
+                    <img
+                      loading="lazy"
+                      src="assets/images/flag1.svg"
+                      alt="photo"
+                      width="28"
+                      height="20"
+                    />
+                  </div>
+                  <p>Русский</p>
+                  <i class="icon icon-arrow-down"></i>
+                </div>
+
+                <div class="language-sub-block">
+                  <div class="l-sub-header G-align-center">
+                    <p>Выбор языка</p>
+                  </div>
+                  <div class="language-sub-columns G-flex">
+                    <div class="language-sub-items G-flex-column">
+                      <div class="language-sub-item active G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag1.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>Русский</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag2.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>English</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag3.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>Español</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag4.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>Français</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag5.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>Português</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag6.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>Deutsch</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag7.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>Italiano</p>
+                      </div>
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag8.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>हिन्दी</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag9.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>বাংলা</p>
+                      </div>
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag10.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>العربية</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag11.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>Türkçe</p>
+                      </div>
+                    </div>
+                    <div class="language-sub-items G-flex-column">
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag12.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>Bahasa Indonesia</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag13.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>日本語</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag14.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>한국어</p>
+                      </div>
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag15.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>中文</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag16.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>Қазақ тілі</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag17.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>Polski</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag18.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>Tiếng Việt</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag19.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>ไทย</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag20.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>فارسی</p>
+                      </div>
+
+                      <div class="language-sub-item G-align-center">
+                        <div class="l-sub-flag G-flex">
+                          <img
+                            loading="lazy"
+                            src="assets/images/flag21.svg"
+                            alt="photo"
+                            width="28"
+                            height="20"
+                          />
+                        </div>
+                        <p>Nederlands</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#" class="btn-login">
+                <span class="desktop-block">Вход</span>
+                <i class="icon icon-login mobile-block"></i>
+              </a>
+              <a href="#" class="btn-register">
+                <span class="desktop-block">Попробовать бесплатно</span>
+                <i class="icon icon-arrow mobile-block"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="about-first-section">
+          <div class="container">
+            <div class="bread-crumbs">
+              <ul>
+                <li>
+                  <a href="index.html">Нейросеть для презентаций</a>
+                </li>
+                <li>
+                  <span>/</span>
+                </li>
+                <li>
+                  <a class="active" href="#">О нас</a>
+                </li>
+              </ul>
+            </div>
+            <div class="about-titles">
+              <h1>
+                Делаем сложное
+                <span class="advanced-title-img G-center">
+                  <img
+                    loading="lazy"
+                    src="assets/images/switch.webp"
+                    data-light="assets/images/switch.webp"
+                    data-dark="assets/images/switch.webp"
+                    alt="photo"
+                    width="62"
+                    height="34"
+                  />
+                  <span class="text-blue">простым</span>
+                </span>
+              </h1>
+              <p>
+                Превращаем создание презентаций
+                <strong>из часов в минуты, не жертвуя качеством</strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="about-bg G-flex">
+            <img
+              loading="eager"
+              src="assets/images/aboutBg.webp"
+              data-light="assets/images/aboutBg.webp"
+              data-dark="assets/images/aboutBgDark.webp"
+              alt="photo"
+              class="img-desktop"
+              width="1920"
+              height="500"
+            />
+
+            <img
+              loading="eager"
+              src="assets/images/aboutBgMobile.webp"
+              data-light="assets/images/aboutBgMobile.webp"
+              data-dark="assets/images/aboutBgMobileDark.webp"
+              alt="photo"
+              class="img-mobile"
+              width="1440"
+              height="500"
+            />
+          </div>
+        </section>
+
+        <section class="about-description-section">
+          <div class="container">
+            <div class="about-descr-columns G-flex-column">
+              <div class="about-descr-column G-align-center">
+                <div class="about-descr-img G-flex">
+                  <img
+                    loading="lazy"
+                    src="assets/images/aboutImg1.webp"
+                    data-light="assets/images/aboutImg1.webp"
+                    data-dark="assets/images/aboutImg1Dark.webp"
+                    alt="photo"
+                    class="img-desktop"
+                    width="1920"
+                    height="500"
+                  />
+
+                  <img
+                    loading="lazy"
+                    src="assets/images/aboutImgMobile1.webp"
+                    data-light="assets/images/aboutImgMobile1.webp"
+                    data-dark="assets/images/aboutImgMobileDark1.webp"
+                    alt="photo"
+                    class="img-mobile"
+                    width="1440"
+                    height="500"
+                  />
+                </div>
+                <div class="about-descr-texts">
+                  <div class="section-tag G-align-center">
+                    <i class="icon icon-star"></i>
+                    <span>Никаких слайдов “на коленке”</span>
+                  </div>
+                  <h2 class="section-title">
+                    Помните, как делались
+                    <span class="text-blue">презентации раньше?</span>
+                  </h2>
+                  <div class="about-descr-sub-titles G-flex-column">
+                    <p class="section-sub-title">
+                      Написание нужного текста, поиск подходящего шаблона,
+                      подбор шрифтов и цветов — всё это
+                      <strong>съедало часы.</strong> Когда презентация была
+                      нужна «ещё вчера», приходилось собирать всё вручную,
+                      выдумывать стиль на ходу и бесконечно передвигать блоки.
+                    </p>
+
+                    <p class="section-sub-title">
+                      Мы устали от этого точно так же, как вы, поэтому сделали
+                      <strong>инструмент,</strong> который создаёт грамотную
+                      структуру и красивый дизайн
+                      <strong>автоматически.</strong>
+                    </p>
+                  </div>
+
+                  <div class="about-point about-point--one G-flex">
+                    <img
+                      loading="lazy"
+                      src="assets/images/point.svg"
+                      alt="photo"
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+
+                  <div class="about-point about-point--two G-flex">
+                    <img
+                      loading="lazy"
+                      src="assets/images/point.svg"
+                      alt="photo"
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+
+                  <div class="about-point about-point--tree G-flex">
+                    <img
+                      loading="lazy"
+                      src="assets/images/point.svg"
+                      alt="photo"
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+
+                  <div class="about-point about-point--for G-flex">
+                    <img
+                      loading="lazy"
+                      src="assets/images/point.svg"
+                      alt="photo"
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="about-descr-column G-align-center">
+                <div class="about-descr-texts">
+                  <div class="section-tag G-align-center">
+                    <i class="icon icon-star"></i>
+                    <span>Slidy — для красивых презентаций</span>
+                  </div>
+                  <h2 class="section-title">
+                    Нейросеть, которая
+                    <span class="text-blue">понимает структуру</span>
+                  </h2>
+                  <div class="about-descr-sub-titles G-flex-column">
+                    <p class="section-sub-title">
+                      Slidy берёт на себя самую скучную часть работы. Вместо
+                      того чтобы тратить часы на подбор блоков и выравнивание,
+                      вы просто <strong>описываете мысль</strong> — нейросеть
+                      превращает её в аккуратный слайд.
+                    </p>
+
+                    <p class="section-sub-title">
+                     То, что раньше делалось вручную и «на нервах», теперь получается <strong>быстро, внятно и красиво.</strong> Буквально за пару минут.
+                    </p>
+                  </div>
+
+                  <div class="about-point about-point--one G-flex">
+                    <img
+                      loading="lazy"
+                      src="assets/images/point.svg"
+                      alt="photo"
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+
+                  <div class="about-point about-point--two G-flex">
+                    <img
+                      loading="lazy"
+                      src="assets/images/point.svg"
+                      alt="photo"
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+
+                  <div class="about-point about-point--tree G-flex">
+                    <img
+                      loading="lazy"
+                      src="assets/images/point.svg"
+                      alt="photo"
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+
+                  <div class="about-point about-point--for G-flex">
+                    <img
+                      loading="lazy"
+                      src="assets/images/point.svg"
+                      alt="photo"
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+                <div class="about-descr-img G-flex">
+                  <img
+                    loading="lazy"
+                    src="assets/images/aboutImg2.webp"
+                    data-light="assets/images/aboutImg2.webp"
+                    data-dark="assets/images/aboutImg2Dark.webp"
+                    alt="photo"
+                    class="img-desktop"
+                    width="1920"
+                    height="500"
+                  />
+
+                  <img
+                    loading="lazy"
+                    src="assets/images/aboutImgMobile1.webp"
+                    data-light="assets/images/aboutImgMobile1.webp"
+                    data-dark="assets/images/aboutImgMobileDark1.webp"
+                    alt="photo"
+                    class="img-mobile"
+                    width="1440"
+                    height="500"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="our-history-section section">
+          <div class="container">
+            <div class="our-history-body">
+                <div class="section-titles fade-bottom G-column-center">
+                <div class="section-tag G-align-center">
+                  <i class="icon icon-star"></i>
+                  <span>Наша история</span>
+                </div>
+                <h2 class="section-title">
+                  <span><span class="text-blue">Путь Slidy</span> — от идеи</span>
+                  
+                  <span class="advanced-title-img G-center">
+                  <span>до миллионной</span>
+                  <img
+                    loading="lazy"
+                    src="assets/images/users2.webp"
+                    data-light="assets/images/users2.webp"
+                    data-dark="assets/images/usersDark2.webp"
+                    alt="photo"
+                    width="76"
+                    height="36"
+                  />
+                  <span >аудитории</span>
+                </span>
+
+
+                </h2>
+                <p class="section-sub-title">
+                  От замысла до уникального продукта — 
+                  <strong class="text-wrap">история роста и развития Slidy</strong>
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-body fade-bottom">
+            <div class="footer-bottom G-align-start">
+              <div class="footer-logo-wrapper G-align-center">
+                <a href="index.html" class="footer-logo G-flex">
+                  <img
+                    loading="lazy"
+                    src="assets/images/footerlogo.svg"
+                    data-light="assets/images/footerlogo.svg"
+                    data-dark="assets/images/logo-dark.svg"
+                    alt="logo"
+                    width="105"
+                    height="29"
+                  />
+                </a>
+
+                <div
+                  class="language-select-wrapper footer-select-wrapper mobile-block"
+                >
+                  <div class="language-select-header G-align-center">
+                    <div class="l-select-flag G-flex">
+                      <img
+                        loading="lazy"
+                        src="assets/images/flag1.svg"
+                        alt="photo"
+                        width="28"
+                        height="20"
+                      />
+                    </div>
+                    <p>Русский</p>
+                    <i class="icon icon-arrow-down"></i>
+                  </div>
+
+                  <div class="language-sub-block">
+                    <div class="language-sub-scroll">
+                      <div class="l-sub-header G-align-center">
+                        <p>Выбор языка</p>
+                      </div>
+                      <div class="language-sub-columns G-flex">
+                        <div class="language-sub-items G-flex-column">
+                          <div class="language-sub-item active G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag1.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Русский</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag2.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>English</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag3.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Español</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag4.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Français</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag5.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Português</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag6.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Deutsch</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag7.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Italiano</p>
+                          </div>
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag8.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>हिन्दी</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag9.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>বাংলা</p>
+                          </div>
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag10.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>العربية</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag11.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Türkçe</p>
+                          </div>
+                        </div>
+                        <div class="language-sub-items G-flex-column">
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag12.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Bahasa Indonesia</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag13.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>日本語</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag14.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>한국어</p>
+                          </div>
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag15.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>中文</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag16.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Қазақ тілі</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag17.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Polski</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag18.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Tiếng Việt</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag19.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>ไทย</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag20.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>فارسی</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag21.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Nederlands</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <nav class="footer-nav G-align-start">
+                <ul>
+                  <p>ПРОДУКТ</p>
+                  <li>
+                    <a href="#">Цены</a>
+                  </li>
+                  <li>
+                    <a href="#">Блог</a>
+                  </li>
+                  <li>
+                    <a href="#">Промты</a>
+                  </li>
+                  <li>
+                    <a href="#">Каталог презентаций</a>
+                  </li>
+                  <li>
+                    <a href="#">Шаблоны</a>
+                  </li>
+                </ul>
+
+                <ul>
+                  <p>КОМПАНИЯ</p>
+                  <li>
+                    <a href="#">О нас</a>
+                  </li>
+                  <li>
+                    <a href="#">Команда</a>
+                  </li>
+                  <li>
+                    <a href="#">Помощь</a>
+                  </li>
+                  <li>
+                    <a href="#">Контакты</a>
+                  </li>
+                </ul>
+
+                <ul>
+                  <p>РЕШЕНИЯ</p>
+                  <li>
+                    <a href="#">Стартапам</a>
+                  </li>
+                  <li>
+                    <a href="#">Маркетологам</a>
+                  </li>
+                  <li>
+                    <a href="#">Отделам продаж</a>
+                  </li>
+                  <li>
+                    <a href="#">Студентам</a>
+                  </li>
+                  <li>
+                    <a href="#">Преподавателям</a>
+                  </li>
+                  <li>
+                    <a href="#">Консультантам</a>
+                  </li>
+                </ul>
+                <ul>
+                  <p>ПРАВОВАЯ ИНФОРМАЦИЯ</p>
+                  <li>
+                    <a href="#">Юридическая информация</a>
+                  </li>
+                  <li>
+                    <a href="#">Правила использования</a>
+                  </li>
+                  <li>
+                    <a href="#">Политика cookie</a>
+                  </li>
+                  <li>
+                    <a href="#">Соглашение об обработке данных</a>
+                  </li>
+                  <li>
+                    <a href="#">Политика конфиденциальности</a>
+                  </li>
+                  <li>
+                    <a href="#">Условия использования</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="footer-top G-flex">
+              <div class="footer-column G-flex-column">
+                <p class="footer-text">
+                  По всем вопросам, связанным с работой сервиса, вы можете
+                  связаться с нами по электронной почте:
+                  <a href="mailto:help@slidy.ai">help@slidy.ai</a>
+                </p>
+
+                <div
+                  class="language-select-wrapper footer-select-wrapper desktop-block"
+                >
+                  <div class="language-select-header G-align-center">
+                    <div class="l-select-flag G-flex">
+                      <img
+                        loading="lazy"
+                        src="assets/images/flag1.svg"
+                        alt="photo"
+                        width="28"
+                        height="20"
+                      />
+                    </div>
+                    <p>Русский</p>
+                    <i class="icon icon-arrow-down"></i>
+                  </div>
+
+                  <div class="language-sub-block">
+                    <div class="language-sub-scroll">
+                      <div class="l-sub-header G-align-center">
+                        <p>Выбор языка</p>
+                      </div>
+                      <div class="language-sub-columns G-flex">
+                        <div class="language-sub-items G-flex-column">
+                          <div class="language-sub-item active G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag1.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Русский</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag2.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>English</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag3.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Español</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag4.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Français</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag5.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Português</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag6.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Deutsch</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag7.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Italiano</p>
+                          </div>
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag8.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>हिन्दी</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag9.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>বাংলা</p>
+                          </div>
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag10.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>العربية</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag11.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Türkçe</p>
+                          </div>
+                        </div>
+                        <div class="language-sub-items G-flex-column">
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag12.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Bahasa Indonesia</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag13.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>日本語</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag14.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>한국어</p>
+                          </div>
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag15.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>中文</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag16.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Қазақ тілі</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag17.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Polski</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag18.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Tiếng Việt</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag19.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>ไทย</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag20.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>فارسی</p>
+                          </div>
+
+                          <div class="language-sub-item G-align-center">
+                            <div class="l-sub-flag G-flex">
+                              <img
+                                loading="lazy"
+                                src="assets/images/flag21.svg"
+                                alt="photo"
+                                width="28"
+                                height="20"
+                              />
+                            </div>
+                            <p>Nederlands</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="footer-clue desktop-block">
+                  © 2025 Slidy AI. Все права защищены
+                </p>
+              </div>
+              <div class="footer-logos-column G-flex-column">
+                <div class="footer-links G-align-center">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      src="assets/images/telegram.svg"
+                      alt="photo"
+                      width="65"
+                      height="65"
+                    />
+                  </a>
+
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      src="assets/images/vk.svg"
+                      alt="photo"
+                      width="65"
+                      height="65"
+                    />
+                  </a>
+                </div>
+
+                <div class="footer-apps G-align-center">
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      src="assets/images/appStore.svg"
+                      alt="photo"
+                      width="185"
+                      height="54"
+                    />
+                  </a>
+
+                  <a href="#">
+                    <img
+                      loading="lazy"
+                      src="assets/images/googlePlay.svg"
+                      alt="photo"
+                      width="65"
+                      height="65"
+                    />
+                  </a>
+                </div>
+              </div>
+              <p class="footer-clue mobile-block">
+                © 2025 Slidy AI. Все права защищены
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script defer src="https://cdn.jsdelivr.net/npm/macy@2"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.event.move/1.3.6/jquery.event.move.min.js"
+      defer
+    ></script>
+    <script defer src="assets/js/swiper.js"></script>
+    <script defer src="assets/js/index.js"></script>
+  </body>
+</html>

@@ -1,4 +1,7 @@
- const macy = Macy({
+const reviewsItemsBlock = document.querySelector('.reviews-items');
+
+if (reviewsItemsBlock) {
+  const macyReviewsGrid = Macy({
     container: '.reviews-items',
     margin: 10,
     columns: 3,
@@ -7,7 +10,7 @@
       768: 1,
     }
   });
-
+}
 
 
 const header = document.querySelector("header");
@@ -21,43 +24,43 @@ window.addEventListener("scroll", function () {
 });
 
 
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-const savedTheme = localStorage.getItem("theme");
-
-const currentTheme = savedTheme || (prefersDark ? "dark" : "light");
-document.documentElement.setAttribute("data-theme", currentTheme);
-updateImages(currentTheme);
-
-function updateImages(theme) {
-  const images = document.querySelectorAll("img[data-light][data-dark]");
-  images.forEach(img => {
-    img.src = theme === "dark" ? img.dataset.dark : img.dataset.light;
-  });
-}
-
 // const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 // const savedTheme = localStorage.getItem("theme");
 
 // const currentTheme = savedTheme || (prefersDark ? "dark" : "light");
-// setTheme(currentTheme);
-
-// function setTheme(theme) {
-//   document.documentElement.setAttribute("data-theme", theme);
-//   localStorage.setItem("theme", theme);
-//   updateImages(theme);
-// }
+// document.documentElement.setAttribute("data-theme", currentTheme);
+// updateImages(currentTheme);
 
 // function updateImages(theme) {
-//   document.querySelectorAll("img[data-light][data-dark]").forEach(img => {
+//   const images = document.querySelectorAll("img[data-light][data-dark]");
+//   images.forEach(img => {
 //     img.src = theme === "dark" ? img.dataset.dark : img.dataset.light;
 //   });
 // }
 
-// document.querySelectorAll(".theme-btn").forEach(btn => {
-//   btn.addEventListener("click", () => {
-//     setTheme(btn.dataset.themeBtn);
-//   });
-// });
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const savedTheme = localStorage.getItem("theme");
+
+const currentTheme = savedTheme || (prefersDark ? "dark" : "light");
+setTheme(currentTheme);
+
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  updateImages(theme);
+}
+
+function updateImages(theme) {
+  document.querySelectorAll("img[data-light][data-dark]").forEach(img => {
+    img.src = theme === "dark" ? img.dataset.dark : img.dataset.light;
+  });
+}
+
+document.querySelectorAll(".theme-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    setTheme(btn.dataset.themeBtn);
+  });
+});
 
 
 
@@ -357,25 +360,72 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('.compare-tabs-mobile button');
-  const table = document.querySelector('.compare-table');
+  const compareMobileTabsButtons = document.querySelectorAll('.compare-tabs-mobile button');
+  const compareTableBlock = document.querySelector('.compare-table');
 
-  if (!tabs.length || !table) return;
+  if (!compareMobileTabsButtons.length || !compareTableBlock) return;
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const targetSelector = tab.dataset.target;
-      const targetCol = table.querySelector(targetSelector);
+  const compareFeatureColumn = compareTableBlock.querySelector('.compare-col--feature');
+  const compareAccentColumn = compareTableBlock.querySelector('.compare-col--accent');
+  const compareOtherColumn = compareTableBlock.querySelector('.compare-col--other');
 
-      if (!targetCol) return;
+  if (!compareFeatureColumn || !compareAccentColumn || !compareOtherColumn) return;
 
-      tabs.forEach(btn => btn.classList.remove('active'));
-      tab.classList.add('active');
+  const setCompareMobileActiveTab = (targetSelector) => {
+    compareMobileTabsButtons.forEach((compareTabButton) => {
+      compareTabButton.classList.toggle(
+        'active',
+        compareTabButton.dataset.target === targetSelector
+      );
+    });
+  };
 
-      table.scrollTo({
-        left: targetCol.offsetLeft,
-        behavior: 'smooth'
+  const scrollCompareTableToColumn = (compareTargetColumn) => {
+    if (!compareTargetColumn) return;
+
+    compareTableBlock.scrollTo({
+      left: compareTargetColumn.offsetLeft,
+      behavior: 'smooth'
+    });
+  };
+
+  const switchCompareMobileColumns = (targetSelector) => {
+    setCompareMobileActiveTab(targetSelector);
+
+    if (targetSelector === '.compare-col--other') {
+      compareTableBlock.classList.add('show-other');
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          scrollCompareTableToColumn(compareOtherColumn);
+        });
       });
+
+      return;
+    }
+
+    compareTableBlock.classList.remove('show-other');
+
+    compareTableBlock.scrollTo({
+      left: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const compareDefaultActiveButton =
+    document.querySelector('.compare-tabs-mobile button.active') ||
+    compareMobileTabsButtons[0];
+
+  if (compareDefaultActiveButton) {
+    switchCompareMobileColumns(compareDefaultActiveButton.dataset.target);
+  }
+
+  compareMobileTabsButtons.forEach((compareTabButton) => {
+    compareTabButton.addEventListener('click', () => {
+      const compareTargetSelector = compareTabButton.dataset.target;
+      if (!compareTargetSelector) return;
+
+      switchCompareMobileColumns(compareTargetSelector);
     });
   });
 });
@@ -550,6 +600,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  const updateMobileHorizontalEdgeClasses = () => {
+    const mobileCurrentScrollLeft = mobileSideNavScrollContainer.scrollLeft;
+    const mobileVisibleWidth = mobileSideNavScrollContainer.clientWidth;
+    const mobileFullScrollWidth = mobileSideNavScrollContainer.scrollWidth;
+
+    mobileSideNavBlock.classList.remove("first", "last");
+
+    if (mobileCurrentScrollLeft <= 2) {
+      mobileSideNavBlock.classList.add("first");
+    }
+
+    if (mobileCurrentScrollLeft + mobileVisibleWidth >= mobileFullScrollWidth - 2) {
+      mobileSideNavBlock.classList.add("last");
+    }
+  };
+
   let mobileLastActiveLinkElement = null;
 
   const updateMobileActiveLinkByScroll = () => {
@@ -586,10 +652,50 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateMobileSideNavAllStates = () => {
     updateMobileSideNavVisibility();
     updateMobileActiveLinkByScroll();
+    updateMobileHorizontalEdgeClasses();
   };
 
   updateMobileSideNavAllStates();
 
   window.addEventListener("scroll", updateMobileSideNavAllStates);
   window.addEventListener("resize", updateMobileSideNavAllStates);
+  mobileSideNavScrollContainer.addEventListener("scroll", updateMobileHorizontalEdgeClasses);
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const templatesTabsWrapper = document.querySelector('.templates-tabs');
+  const templatesTabButtons = document.querySelectorAll('.templates-tabs button');
+  const templatesContentItems = document.querySelectorAll('.templates-items');
+
+  if (templatesTabsWrapper && templatesTabButtons.length && templatesContentItems.length) {
+    function setActiveTemplateTab(templateId) {
+      templatesTabButtons.forEach(function (singleTemplateButton) {
+        singleTemplateButton.classList.toggle(
+          'active',
+          singleTemplateButton.dataset.id === templateId
+        );
+      });
+
+      templatesContentItems.forEach(function (singleTemplateContent) {
+        if (singleTemplateContent.dataset.id === templateId) {
+          singleTemplateContent.style.display = 'grid'; 
+        } else {
+          singleTemplateContent.style.display = 'none';
+        }
+      });
+    }
+
+    const firstTemplateButton = templatesTabButtons[0];
+    const firstTemplateId = firstTemplateButton.dataset.id;
+
+    setActiveTemplateTab(firstTemplateId);
+
+    templatesTabButtons.forEach(function (singleTemplateButton) {
+      singleTemplateButton.addEventListener('click', function () {
+        const currentTemplateId = this.dataset.id;
+        setActiveTemplateTab(currentTemplateId);
+      });
+    });
+  }
 });
