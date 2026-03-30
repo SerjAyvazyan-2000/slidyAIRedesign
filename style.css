@@ -3151,6 +3151,7 @@ header.moved {
     gap: 12px;
     cursor: pointer;
     transition: 0.3s;
+    padding: 0;
   }
   .l-select-flag {
     margin-top: 0;
@@ -3190,9 +3191,21 @@ header.moved {
     height: 40px;
   }
 
+
+
+  .header-actions > * + * {
+  margin-left: 16px;
+}
+
+@supports (gap: 16px) {
   .header-actions {
     gap: 16px;
   }
+
+  .header-actions > * + * {
+    margin-left: 0;
+  }
+}
 
   .header-select-wrapper .language-select-header p {
     display: none;
