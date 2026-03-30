@@ -979,6 +979,7 @@ header.moved {
   left: 50%;
   top: 50%;
   transition: 0.3s;
+  transform: translate(-50%, -50%);
 }
 .circle-img-hover {
   position: absolute;
@@ -989,14 +990,21 @@ header.moved {
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
+    transform: translate(-50%, -50%);
 }
 
-.circle-text-img,
-.circle-img-hover {
-  transform-origin: center;
-  will-change: transform;
+
+
+.circle-text-img img,
+.circle-img-hover img {
+  display: block;
+  width: 100%;
+  height: auto;
   animation: rotateCircleText 14s linear infinite;
+  transform-origin: center;
 }
+
+
 .circle-inside-line {
   max-width: 162px;
   width: 100%;
@@ -1640,6 +1648,7 @@ header.moved {
   left: 50%;
   top: 50%;
   transition: 0.3s;
+    transform: translate(-50%, -50%);
 }
 .edits-circle-img-hover {
   position: absolute;
@@ -1650,6 +1659,7 @@ header.moved {
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
+    transform: translate(-50%, -50%);
 }
 .edits-circle-inside-line {
   max-width: 88px;
@@ -1693,19 +1703,25 @@ header.moved {
   background: var(--accent-color);
 }
 
-.edits-circle-text-img,
-.edits-circle-img-hover {
-  transform-origin: center;
-  will-change: transform;
+.edits-circle-text-img img,
+.edits-circle-img-hover img {
+  display: block;
+  width: 100%;
+  height: auto;
   animation: rotateCircleText 14s linear infinite;
+  transform-origin: center;
 }
+
+
+
+
 
 @keyframes rotateCircleText {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
