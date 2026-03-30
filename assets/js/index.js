@@ -148,60 +148,6 @@ $(function () {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const NWrappers = document.querySelectorAll(".language-select-wrapper");
-  if (!NWrappers.length) return;
-
-  NWrappers.forEach((NWrapper) => {
-    const NHeader = NWrapper.querySelector(".language-select-header");
-    const NHeaderText = NHeader?.querySelector("p");
-    const NHeaderFlagImg = NHeader?.querySelector(".l-select-flag img");
-    const NCloseBtn = NWrapper.querySelector(".icon-close");
-    const NItems = NWrapper.querySelectorAll(".language-sub-item");
-
-    if (!NHeader || !NItems.length) return;
-
-   NHeader.addEventListener("click", (e) => {
-      e.stopPropagation();
-      NWrapper.classList.toggle("active");
-    });
-
-   if (NCloseBtn) {
-      NCloseBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        NWrapper.classList.remove("active");
-      });
-    }
-
-    NItems.forEach((NItem) => {
-      NItem.addEventListener("click", (e) => {
-        e.stopPropagation();
-
-        NItems.forEach((item) => item.classList.remove("active"));
-        NItem.classList.add("active");
-
-        const NText = NItem.querySelector("p")?.innerText.trim();
-        if (NText && NHeaderText) {
-          NHeaderText.innerText = NText;
-        }
-
-        const NItemImg = NItem.querySelector("img");
-        if (NItemImg && NHeaderFlagImg) {
-          NHeaderFlagImg.src = NItemImg.src;
-          NHeaderFlagImg.alt = NItemImg.alt || "flag";
-        }
-
-        NWrapper.classList.remove("active");
-      });
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!NWrapper.contains(e.target)) {
-        NWrapper.classList.remove("active");
-      }
-    });
-  });
-});
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -267,6 +213,111 @@ document.addEventListener("DOMContentLoaded", function () {
         setActiveArea(clickedAreaId);
       }
     });
+  });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const languageModalBlock = document.querySelector('.language-modal');
+  const languageModalWrapper = document.querySelector('.language-modal-wrapper');
+  const languageModalCloseButton = document.querySelector('.language-modal .icon-close');
+  const languageOpenButtons = document.querySelectorAll('.language-select-wrapper');
+  const languageItems = document.querySelectorAll('.language-sub-item');
+
+  if (
+    !languageModalBlock ||
+    !languageModalWrapper ||
+    !languageOpenButtons.length ||
+    !languageItems.length
+  ) {
+    return;
+  }
+
+  const closeLanguageModal = () => {
+    languageModalBlock.classList.remove('active');
+
+    languageOpenButtons.forEach((languageOpenButton) => {
+      languageOpenButton.classList.remove('active');
+      document.body.style.overflow = 'unset'
+    });
+  };
+
+  const openLanguageModal = (currentLanguageButton) => {
+    languageModalBlock.classList.add('active');
+    document.body.style.overflow = 'hidden'
+
+    languageOpenButtons.forEach((languageOpenButton) => {
+      languageOpenButton.classList.remove('active');
+       document.body.style.overflow = 'unset'
+    });
+
+    if (currentLanguageButton) {
+      currentLanguageButton.classList.add('active');
+      document.body.style.overflow = 'hidden'
+    }
+  };
+
+  const setActiveLanguageItem = (selectedLanguageItem) => {
+    languageItems.forEach((languageItem) => {
+      languageItem.classList.remove('active');
+        document.body.style.overflow = 'unset'
+    });
+
+    selectedLanguageItem.classList.add('active');
+     document.body.style.overflow = 'hidden'
+  };
+
+  const updateAllLanguageSelectors = (selectedLanguageItem) => {
+    const selectedLanguageTextElement = selectedLanguageItem.querySelector('p');
+    const selectedLanguageImageElement = selectedLanguageItem.querySelector('img');
+
+    if (!selectedLanguageTextElement || !selectedLanguageImageElement) return;
+
+    const selectedLanguageText = selectedLanguageTextElement.textContent.trim();
+    const selectedLanguageImageSrc = selectedLanguageImageElement.getAttribute('src');
+    const selectedLanguageImageAlt =
+      selectedLanguageImageElement.getAttribute('alt') || selectedLanguageText;
+
+    languageOpenButtons.forEach((languageOpenButton) => {
+      const currentLanguageTextElement = languageOpenButton.querySelector('p');
+      const currentLanguageImageElement = languageOpenButton.querySelector('img');
+
+      if (currentLanguageTextElement) {
+        currentLanguageTextElement.textContent = selectedLanguageText;
+      }
+
+      if (currentLanguageImageElement) {
+        currentLanguageImageElement.setAttribute('src', selectedLanguageImageSrc);
+        currentLanguageImageElement.setAttribute('alt', selectedLanguageImageAlt);
+      }
+    });
+  };
+
+  languageOpenButtons.forEach((languageOpenButton) => {
+    languageOpenButton.addEventListener('click', () => {
+      openLanguageModal(languageOpenButton);
+    });
+  });
+
+  languageItems.forEach((languageItem) => {
+    languageItem.addEventListener('click', () => {
+      setActiveLanguageItem(languageItem);
+      updateAllLanguageSelectors(languageItem);
+      closeLanguageModal();
+    });
+  });
+
+  if (languageModalCloseButton) {
+    languageModalCloseButton.addEventListener('click', () => {
+      closeLanguageModal();
+    });
+  }
+
+  languageModalBlock.addEventListener('click', (event) => {
+    if (!languageModalWrapper.contains(event.target)) {
+      closeLanguageModal();
+    }
   });
 });
 

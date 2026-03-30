@@ -22,3 +22,16 @@ const reviewsSwiper = new Swiper(".reviews-swiper", {
   },
 
 });
+
+
+const historySwiper = new Swiper(".history-swiper", {
+  spaceBetween: 10,
+  slidesPerView:1,
+    autoHeight: true,
+  loop:true,
+  pagination: {
+    el: ".history-swiper-pagination",
+    clickable: true,
+  },
+
+});
