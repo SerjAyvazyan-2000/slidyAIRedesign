@@ -3210,10 +3210,11 @@ header.moved {
 
 
   .header-actions {
-    gap: 0;
+    gap: 16px;
   }
+
   .language-select-wrapper{
-    margin-right: 16px;
+    position: initial;
   }
 
 
