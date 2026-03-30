@@ -3171,11 +3171,9 @@ header.moved {
   }
   .l-select-flag {
     margin-top: 0;
-    flex: 0 0 28px;
   }
   .header-select-wrapper .language-select-header i {
     margin-left: unset;
-    flex: 0 0 12px;
   }
 
   .footer-select-wrapper .language-select-header {
@@ -3213,9 +3211,7 @@ header.moved {
     gap: 16px;
   }
 
-  .language-select-wrapper{
-    position: initial;
-  }
+ 
 
 
 
