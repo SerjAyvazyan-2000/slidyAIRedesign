@@ -3209,19 +3209,14 @@ header.moved {
 
 
 
-  .header-actions > * + * {
-  margin-left: 16px;
-}
-
-@supports (gap: 16px) {
   .header-actions {
-    gap: 16px;
+    gap: 0;
+  }
+  .language-select-wrapper{
+    margin-right: 16px;
   }
 
-  .header-actions > * + * {
-    margin-left: 0;
-  }
-}
+
 
   .header-select-wrapper .language-select-header p {
     display: none;
