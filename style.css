@@ -3163,6 +3163,7 @@ header.moved {
   .header-select-wrapper .language-select-header {
     border-radius: 6px;
     max-width: 74px;
+    min-width: 74px;
     width: 100%;
     gap: 12px;
     cursor: pointer;
