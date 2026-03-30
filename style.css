@@ -3060,7 +3060,7 @@ header.moved {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 0 0 40px;
+    min-width: 40px;
     padding: 0;
   }
   .btn-register i {
@@ -3162,9 +3162,7 @@ header.moved {
 
   .header-select-wrapper .language-select-header {
     border-radius: 6px;
-    max-width: 74px;
-    min-width: 74px;
-    width: 100%;
+    min-width: max-content;
     gap: 12px;
     cursor: pointer;
     transition: 0.3s;
