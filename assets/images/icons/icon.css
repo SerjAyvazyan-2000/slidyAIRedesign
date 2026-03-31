@@ -21,6 +21,10 @@
   mask-image: url(close.svg);
   -webkit-mask-image: url(close.svg);
 }
+.icon-close2 {
+  mask-image: url(close2.svg);
+  -webkit-mask-image: url(close2.svg);
+}
 
 .icon-bad{
       mask-image: url(bad.svg);
@@ -61,4 +65,12 @@
 .icon-plus{
       mask-image: url(plus.svg);
   -webkit-mask-image: url(plus.svg);
+}
+.icon-time{
+      mask-image: url(time.svg);
+  -webkit-mask-image: url(time.svg);
+}
+.icon-dots{
+      mask-image: url(dots.svg);
+  -webkit-mask-image: url(dots.svg);
 }

@@ -750,3 +750,179 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const customCategorySelect = document.querySelector('.c-categories-select');
+
+  if (!customCategorySelect) return;
+
+  const customCategoryHeader = customCategorySelect.querySelector('.c-select-header');
+  const customCategoryHeaderText = customCategorySelect.querySelector('.c-select-header p');
+  const customCategoryOptions = customCategorySelect.querySelectorAll('.c-select-options li');
+
+  if (customCategoryHeader) {
+    customCategoryHeader.addEventListener('click', function (e) {
+      e.stopPropagation();
+      customCategorySelect.classList.toggle('active');
+    });
+  }
+
+  customCategoryOptions.forEach(function (customCategoryOption) {
+    customCategoryOption.addEventListener('click', function (e) {
+      e.stopPropagation();
+
+      customCategoryOptions.forEach(function (item) {
+        item.classList.remove('active');
+      });
+
+      customCategoryOption.classList.add('active');
+
+      if (customCategoryHeaderText) {
+        customCategoryHeaderText.textContent = customCategoryOption.querySelector('span').textContent;
+      }
+
+      customCategorySelect.classList.remove('active');
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!customCategorySelect.contains(e.target)) {
+      customCategorySelect.classList.remove('active');
+    }
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const customCheckboxFilterLists = document.querySelectorAll('.checkbox-filters-list');
+
+  if (!customCheckboxFilterLists.length) return;
+
+  customCheckboxFilterLists.forEach(function (customCheckboxFilterList) {
+    const customCheckboxFilterItems = customCheckboxFilterList.querySelectorAll('li');
+
+    if (!customCheckboxFilterItems.length) return;
+
+    customCheckboxFilterItems.forEach(function (customCheckboxFilterItem) {
+      customCheckboxFilterItem.addEventListener('click', function () {
+        customCheckboxFilterItem.classList.toggle('active');
+      });
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const customColorFilterLists = document.querySelectorAll('.color-filters-list');
+
+  if (!customColorFilterLists.length) return;
+
+  customColorFilterLists.forEach(function (customColorFilterList) {
+    const customColorFilterItems = customColorFilterList.querySelectorAll('li');
+
+    if (!customColorFilterItems.length) return;
+
+    customColorFilterItems.forEach(function (customColorFilterItem) {
+      customColorFilterItem.addEventListener('click', function () {
+        customColorFilterItem.classList.toggle('active');
+      });
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const customCatalogTabs = document.querySelectorAll('.catalog-tabs');
+
+  if (!customCatalogTabs.length) return;
+
+  customCatalogTabs.forEach(function (customCatalogTab) {
+    const customCatalogButtons = customCatalogTab.querySelectorAll('button');
+
+    if (!customCatalogButtons.length) return;
+
+    customCatalogButtons.forEach(function (customCatalogButton) {
+      customCatalogButton.addEventListener('click', function () {
+        customCatalogButton.classList.toggle('active');
+      });
+    });
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const customTemplateModal = document.querySelector('.template-description-modal');
+  const customTemplateModalWrapper = document.querySelector('.template-modal-wrapper');
+  const customTemplateModalClose = document.querySelector('.template-modal-wrapper .icon-close');
+  const customCatalogItems = document.querySelectorAll('.catalog-item');
+
+  if (!customTemplateModal || !customTemplateModalWrapper || !customCatalogItems.length) return;
+
+  customCatalogItems.forEach(function (customCatalogItem) {
+    customCatalogItem.addEventListener('click', function (e) {
+      e.preventDefault();
+      customTemplateModal.classList.add('active');
+      document.body.style.overflow = 'hidden'
+    });
+  });
+
+  if (customTemplateModalClose) {
+    customTemplateModalClose.addEventListener('click', function () {
+      customTemplateModal.classList.remove('active');
+      document.body.style.overflow = 'unset'
+    });
+  }
+
+  customTemplateModal.addEventListener('click', function (e) {
+    if (!customTemplateModalWrapper.contains(e.target)) {
+      customTemplateModal.classList.remove('active');
+      document.body.style.overflow = 'unset'
+    }
+  });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const customTemplateModalMediaBlocks = document.querySelectorAll('.template-modal-media');
+
+  if (!customTemplateModalMediaBlocks.length) return;
+
+  customTemplateModalMediaBlocks.forEach(function (customTemplateModalMedia) {
+    const customTemplateMainImage = customTemplateModalMedia.querySelector('.t-modal-main-img img');
+    const customTemplatePreviewItems = customTemplateModalMedia.querySelectorAll('.t-modal-img');
+
+    if (!customTemplateMainImage || !customTemplatePreviewItems.length) return;
+
+    const customTemplateFirstPreview = customTemplateModalMedia.querySelector('.t-modal-img.active') || customTemplatePreviewItems[0];
+
+    if (customTemplateFirstPreview) {
+      const customTemplateFirstImageSrc = customTemplateFirstPreview.getAttribute('data-modal-img');
+
+      customTemplatePreviewItems.forEach(function (item) {
+        item.classList.remove('active');
+      });
+
+      customTemplateFirstPreview.classList.add('active');
+
+      if (customTemplateFirstImageSrc) {
+        customTemplateMainImage.src = customTemplateFirstImageSrc;
+      }
+    }
+
+    customTemplatePreviewItems.forEach(function (customTemplatePreviewItem) {
+      customTemplatePreviewItem.addEventListener('click', function () {
+        const customTemplateNewImageSrc = customTemplatePreviewItem.getAttribute('data-modal-img');
+
+        customTemplatePreviewItems.forEach(function (item) {
+          item.classList.remove('active');
+        });
+
+        customTemplatePreviewItem.classList.add('active');
+
+        if (customTemplateNewImageSrc) {
+          customTemplateMainImage.src = customTemplateNewImageSrc;
+        }
+      });
+    });
+  });
+});
