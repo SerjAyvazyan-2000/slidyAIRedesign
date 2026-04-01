@@ -794,41 +794,62 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
 document.addEventListener('DOMContentLoaded', function () {
   const customCheckboxFilterLists = document.querySelectorAll('.checkbox-filters-list');
-
-  if (!customCheckboxFilterLists.length) return;
-
-  customCheckboxFilterLists.forEach(function (customCheckboxFilterList) {
-    const customCheckboxFilterItems = customCheckboxFilterList.querySelectorAll('li');
-
-    if (!customCheckboxFilterItems.length) return;
-
-    customCheckboxFilterItems.forEach(function (customCheckboxFilterItem) {
-      customCheckboxFilterItem.addEventListener('click', function () {
-        customCheckboxFilterItem.classList.toggle('active');
-      });
-    });
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
   const customColorFilterLists = document.querySelectorAll('.color-filters-list');
+  const customResetAllButtons = document.querySelectorAll('.reset-all');
 
-  if (!customColorFilterLists.length) return;
+  if (customCheckboxFilterLists.length) {
+    customCheckboxFilterLists.forEach(function (customCheckboxFilterList) {
+      const customCheckboxFilterItems = customCheckboxFilterList.querySelectorAll('li');
 
-  customColorFilterLists.forEach(function (customColorFilterList) {
-    const customColorFilterItems = customColorFilterList.querySelectorAll('li');
+      if (!customCheckboxFilterItems.length) return;
 
-    if (!customColorFilterItems.length) return;
-
-    customColorFilterItems.forEach(function (customColorFilterItem) {
-      customColorFilterItem.addEventListener('click', function () {
-        customColorFilterItem.classList.toggle('active');
+      customCheckboxFilterItems.forEach(function (customCheckboxFilterItem) {
+        customCheckboxFilterItem.addEventListener('click', function () {
+          customCheckboxFilterItem.classList.toggle('active');
+        });
       });
     });
-  });
+  }
+
+  if (customColorFilterLists.length) {
+    customColorFilterLists.forEach(function (customColorFilterList) {
+      const customColorFilterItems = customColorFilterList.querySelectorAll('li');
+
+      if (!customColorFilterItems.length) return;
+
+      customColorFilterItems.forEach(function (customColorFilterItem) {
+        customColorFilterItem.addEventListener('click', function () {
+          customColorFilterItem.classList.toggle('active');
+        });
+      });
+    });
+  }
+
+  if (customResetAllButtons.length) {
+    customResetAllButtons.forEach(function (customResetAllButton) {
+      customResetAllButton.addEventListener('click', function () {
+        const customFiltersWrapper = customResetAllButton.closest('.catalog-filters-items');
+
+        if (!customFiltersWrapper) return;
+
+        const customActiveCheckboxItems = customFiltersWrapper.querySelectorAll('.checkbox-filters-list li.active');
+        const customActiveColorItems = customFiltersWrapper.querySelectorAll('.color-filters-list li.active');
+
+        customActiveCheckboxItems.forEach(function (customActiveCheckboxItem) {
+          customActiveCheckboxItem.classList.remove('active');
+        });
+
+        customActiveColorItems.forEach(function (customActiveColorItem) {
+          customActiveColorItem.classList.remove('active');
+        });
+      });
+    });
+  }
 });
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const customCatalogTabs = document.querySelectorAll('.catalog-tabs');
@@ -842,8 +863,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     customCatalogButtons.forEach(function (customCatalogButton) {
       customCatalogButton.addEventListener('click', function () {
-        customCatalogButton.classList.toggle('active');
+        customCatalogButtons.forEach(function (button) {
+          button.classList.remove('active');
+        });
+
+        customCatalogButton.classList.add('active');
       });
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const customSelectedCategoryButtons = document.querySelectorAll('.c-selected-categories button');
+
+  if (!customSelectedCategoryButtons.length) return;
+
+  customSelectedCategoryButtons.forEach(function (customSelectedCategoryButton) {
+    customSelectedCategoryButton.addEventListener('click', function () {
+      customSelectedCategoryButton.remove();
     });
   });
 });
