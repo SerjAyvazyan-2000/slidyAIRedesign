@@ -19,6 +19,9 @@
   --text-color8: #1f1f1f;
   --accent-color: #1252d3;
 
+  --gradient1: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+
+
   --border: #46455114;
 }
 
@@ -43,6 +46,9 @@
   --text-color8: #b7b9bb;
 
   --accent-color: #a1d8ee;
+
+   --gradient1: linear-gradient(270deg, rgba(27, 28, 31, 0) 0%, #1B1C1F 100%);
+
 
   --border: #ffffff14;
 }
