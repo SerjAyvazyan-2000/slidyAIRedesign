@@ -964,82 +964,50 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const tabsWrapper = document.querySelector(".slidy-catalog__tabs");
+  const toggleButton = document.querySelector(".c-show-all");
 
+  if (!tabsWrapper || !toggleButton) return;
 
-document.addEventListener('DOMContentLoaded', function () {
-  const controls = document.querySelector('.slidy-catalog__controls');
-  const tabsWrap = document.querySelector('.slidy-catalog__tabs');
-  const nextBtn = document.querySelector('.slidy-catalog-arrow.next');
-  const prevBtn = document.querySelector('.slidy-catalog-arrow.prev');
+  const hiddenTabs = tabsWrapper.querySelectorAll(".show-after-click");
+  const buttonText = toggleButton.querySelector("span");
 
-  if (!controls || !tabsWrap || !nextBtn || !prevBtn) return;
+  if (!hiddenTabs.length) return;
 
-  const scrollStep = () => tabsWrap.clientWidth * 0.7;
+  hiddenTabs.forEach(function (item) {
+    item.style.display = "none";
+  });
 
-  function updateEdgeClasses() {
-    const maxScrollLeft = tabsWrap.scrollWidth - tabsWrap.clientWidth;
+  toggleButton.addEventListener("click", function () {
+    const isOpened = toggleButton.classList.contains("is-open");
 
-    controls.classList.remove('first', 'last');
+    if (isOpened) {
+      hiddenTabs.forEach(function (item) {
+        item.style.display = "none";
+      });
 
-    if (tabsWrap.scrollLeft <= 5) {
-      controls.classList.add('first');
-    } else if (tabsWrap.scrollLeft >= maxScrollLeft - 5) {
-      controls.classList.add('last');
+      toggleButton.classList.remove("is-open");
+
+      if (buttonText) {
+        buttonText.textContent = "Показать все";
+      }
+    } else {
+      hiddenTabs.forEach(function (item) {
+        item.style.display = "";
+      });
+
+      toggleButton.classList.add("is-open");
+
+      if (buttonText) {
+        buttonText.textContent = "Показать меньше";
+      }
     }
-  }
-
-  nextBtn.addEventListener('click', function () {
-    tabsWrap.scrollBy({
-      left: scrollStep(),
-      behavior: 'smooth'
-    });
   });
-
-  prevBtn.addEventListener('click', function () {
-    tabsWrap.scrollBy({
-      left: -scrollStep(),
-      behavior: 'smooth'
-    });
-  });
-
-  tabsWrap.addEventListener('scroll', updateEdgeClasses);
-  window.addEventListener('resize', updateEdgeClasses);
-
-  // drag scroll мышкой
-  let isDown = false;
-  let startX = 0;
-  let startScrollLeft = 0;
-
-  tabsWrap.addEventListener('mousedown', function (e) {
-    isDown = true;
-    tabsWrap.classList.add('is-dragging');
-    startX = e.pageX - tabsWrap.offsetLeft;
-    startScrollLeft = tabsWrap.scrollLeft;
-  });
-
-  document.addEventListener('mouseup', function () {
-    isDown = false;
-    tabsWrap.classList.remove('is-dragging');
-  });
-
-  tabsWrap.addEventListener('mouseleave', function () {
-    isDown = false;
-    tabsWrap.classList.remove('is-dragging');
-  });
-
-  tabsWrap.addEventListener('mousemove', function (e) {
-    if (!isDown) return;
-
-    e.preventDefault();
-
-    const x = e.pageX - tabsWrap.offsetLeft;
-    const walk = (x - startX) * 1.2;
-
-    tabsWrap.scrollLeft = startScrollLeft - walk;
-  });
-
-  updateEdgeClasses();
 });
+
+
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
