@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Soyuz Grotesk";
+  src:
+    url("Soyuz_Grotesk_Bold.woff") format("woff"),
+    local("Soyuz_Grotesk_Bold.woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Soyuz Grotesk";
+  src:
+    url("Soyuz_Grotesk_Bold.woff2") format("woff2"),
+    local("Soyuz_Grotesk_Bold.woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Times New Roman";
+  src:
+    url("ofont.ru_Times\ New\ Roman.woff2") format("woff2"),
+    local("ofont.ru_Times\ New\ Roman.woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Times New Roman";
+  src:
+    url("timesnewromanpsmt.woff2") format("woff2"),
+    local("timesnewromanpsmt.woff2");
+  font-weight: 400;
+}

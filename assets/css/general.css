@@ -23,6 +23,8 @@
 
 
   --border: #46455114;
+  --border2:  #78797B;
+  
 }
 
 [data-theme="dark"] {
@@ -51,6 +53,7 @@
 
 
   --border: #ffffff14;
+    --border2:  #6B6F73;
 }
 
 .animate-item {

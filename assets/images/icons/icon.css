@@ -74,3 +74,7 @@
       mask-image: url(dots.svg);
   -webkit-mask-image: url(dots.svg);
 }
+.icon-dots2{
+      mask-image: url(dots2.svg);
+  -webkit-mask-image: url(dots2.svg);
+}
