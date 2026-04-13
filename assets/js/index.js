@@ -24,43 +24,43 @@ window.addEventListener("scroll", function () {
 });
 
 
-// const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-// const savedTheme = localStorage.getItem("theme");
-
-// const currentTheme = savedTheme || (prefersDark ? "dark" : "light");
-// document.documentElement.setAttribute("data-theme", currentTheme);
-// updateImages(currentTheme);
-
-// function updateImages(theme) {
-//   const images = document.querySelectorAll("img[data-light][data-dark]");
-//   images.forEach(img => {
-//     img.src = theme === "dark" ? img.dataset.dark : img.dataset.light;
-//   });
-// }
-
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const savedTheme = localStorage.getItem("theme");
 
 const currentTheme = savedTheme || (prefersDark ? "dark" : "light");
-setTheme(currentTheme);
-
-function setTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("theme", theme);
-  updateImages(theme);
-}
+document.documentElement.setAttribute("data-theme", currentTheme);
+updateImages(currentTheme);
 
 function updateImages(theme) {
-  document.querySelectorAll("img[data-light][data-dark]").forEach(img => {
+  const images = document.querySelectorAll("img[data-light][data-dark]");
+  images.forEach(img => {
     img.src = theme === "dark" ? img.dataset.dark : img.dataset.light;
   });
 }
 
-document.querySelectorAll(".theme-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    setTheme(btn.dataset.themeBtn);
-  });
-});
+// const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+// const savedTheme = localStorage.getItem("theme");
+
+// const currentTheme = savedTheme || (prefersDark ? "dark" : "light");
+// setTheme(currentTheme);
+
+// function setTheme(theme) {
+//   document.documentElement.setAttribute("data-theme", theme);
+//   localStorage.setItem("theme", theme);
+//   updateImages(theme);
+// }
+
+// function updateImages(theme) {
+//   document.querySelectorAll("img[data-light][data-dark]").forEach(img => {
+//     img.src = theme === "dark" ? img.dataset.dark : img.dataset.light;
+//   });
+// }
+
+// document.querySelectorAll(".theme-btn").forEach(btn => {
+//   btn.addEventListener("click", () => {
+//     setTheme(btn.dataset.themeBtn);
+//   });
+// });
 
 
 
